@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Ejercicio1</string>
+    <string name="nombre">Nombre</string>
+    <string name="checkText">Educado</string>
+    <string name="txtBtn">Saludar</string>
+    <string name="txtMessage" />
+    <string name="txtName" />
+</resources>
