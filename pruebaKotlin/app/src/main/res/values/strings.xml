@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">pruebaKotlin</string>
+    <string name="txtName" />
+    <string name="nombre">Name</string>
+    <string name="txtBtn">Mostrar</string>
+    <string name="txtMessage" />
+</resources>
