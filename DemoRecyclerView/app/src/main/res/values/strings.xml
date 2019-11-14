@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">DemoRecyclerView</string>
+    <string name="main_lblEmptyView">No students yet</string>
+    <string name="main_add_student">Add Student</string>
+</resources>
