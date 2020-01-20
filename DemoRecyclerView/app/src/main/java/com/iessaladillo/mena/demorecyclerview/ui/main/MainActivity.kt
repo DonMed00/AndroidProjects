@@ -40,7 +40,7 @@ class MainActivity : AppCompatActivity() {
 
     private fun addFakeSudent() {
         val value = random.nextInt(100)
-        viewModel.addStudent(Student(5 + value.toLong(),"Lorenzo",value))
+        viewModel.addStudent(Student(5 + value.toLong(),"Lorenzo${value}",value))
     }
 
     private fun setupRecyclerView() {
@@ -54,8 +54,10 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun updateList(newList: List<Student>) {
-        listAdapter.submitList(newList)
-        lblEmptyView.visibility = if (newList.isEmpty()) View.VISIBLE else View.INVISIBLE
+        lstStudents.post{
+            listAdapter.submitList(newList)
+            lblEmptyView.visibility = if (newList.isEmpty()) View.VISIBLE else View.INVISIBLE
+        }
     }
 
     private fun observeStudents() {

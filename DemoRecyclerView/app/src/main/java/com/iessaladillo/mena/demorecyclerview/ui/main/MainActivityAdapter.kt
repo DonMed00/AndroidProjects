@@ -4,12 +4,13 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
+import androidx.recyclerview.widget.DiffUtil
+import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.iessaladillo.mena.demorecyclerview.R
 import com.iessaladillo.mena.demorecyclerview.data.entity.Student
 
-
-class MainActivityAdapter() : RecyclerView.Adapter<MainActivityAdapter.ViewHolder>() {
+class MainActivityAdapter : ListAdapter<Student,MainActivityAdapter.ViewHolder>(StudentDiffCallback) {
 
     private var data: List<Student> = emptyList()
 
@@ -27,11 +28,6 @@ class MainActivityAdapter() : RecyclerView.Adapter<MainActivityAdapter.ViewHolde
         holder.bind(student)
     }
 
-    fun submitList(newList: List<Student>) {
-        data = newList
-        notifyDataSetChanged()
-    }
-
     class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
 
         private val lblName: TextView = itemView.findViewById(R.id.lblName)
@@ -44,5 +40,13 @@ class MainActivityAdapter() : RecyclerView.Adapter<MainActivityAdapter.ViewHolde
             }
         }
 
+    }
+    object  StudentDiffCallback: DiffUtil.ItemCallback<Student>(){
+        override fun areItemsTheSame(oldItem: Student, newItem: Student): Boolean =
+            oldItem.id == newItem.id
+
+
+        override fun areContentsTheSame(oldItem: Student, newItem: Student): Boolean =
+            oldItem.name==newItem.name && oldItem.age==newItem.age
     }
 }

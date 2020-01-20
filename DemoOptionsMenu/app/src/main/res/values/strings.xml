@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">DemoOptionsMenu</string>
+    <string name="main_mnuAbout">About</string>
+    <string name="photo_mnuSettings">Settings</string>
+    <string name="photo_mnuSave">Save</string>
+    <string name="photo_mnuAdd">Add</string>
+    <string name="main_mnuSettings">Settings</string>
+    <string name="main_mnuVisible">Visible</string>
+</resources>
